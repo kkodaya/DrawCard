@@ -4,11 +4,11 @@ import Logo from './img/Logo.png';
 import { useState } from 'react';
 
 
+// 헤더 페이지 작성자 이금철
 const Header = () => {
     const [userInput, setUserState] = useState('');
 
     return (
-        // 헤더 페이지 작성자 이금철
         <header className='header'>
             
             <div className='contents'>
@@ -22,32 +22,35 @@ const Header = () => {
 
                 {/* 검색 영역 */}
                 <div className='search_area'>
-                <form class="form">
-                    <label for="search">
-                        <input required="" autocomplete="off" placeholder="search your chats" id="search" type="text"/>
-                        <div class="icon">
-                            <svg stroke-width="2" stroke="currentColor" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="swap-on">
-                                <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" stroke-linejoin="round" stroke-linecap="round"></path>
-                            </svg>
-                            <svg stroke-width="2" stroke="currentColor" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="swap-off">
-                                <path d="M10 19l-7-7m0 0l7-7m-7 7h18" stroke-linejoin="round" stroke-linecap="round"></path>
-                            </svg>
-                        </div>
-                        <button type="reset" class="close-btn">
-                            <svg viewBox="0 0 20 20" class="h-5 w-5" xmlns="http://www.w3.org/2000/svg">
-                                <path clip-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" fill-rule="evenodd"></path>
-                            </svg>
-                        </button>
-                    </label>
-                </form>
+                    <div class="input-container">
+                        <input type="text" name="text" class="input" placeholder="search..."/>
+                        <span class="icon"> 
+                            <svg width="19px" height="19px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path opacity="1" d="M14 5H20" stroke="#000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path> <path opacity="1" d="M14 8H17" stroke="#000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M21 11.5C21 16.75 16.75 21 11.5 21C6.25 21 2 16.75 2 11.5C2 6.25 6.25 2 11.5 2" stroke="#000" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></path> <path opacity="1" d="M22 22L20 20" stroke="#000" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+                        </span>
+                    </div>
                 </div>
 
                 {/* 메뉴 영역 */}
                 <div className='menu_area'>
-                    <span>wallet</span>
-                    <span>profile</span>
+                    <a class="fancy" href="#">
+                        <span class="top-key"></span>
+                        <span class="text">wallet</span>
+                        <span class="bottom-key-1"></span>
+                        <span class="bottom-key-2"></span>
+                    </a>
+
+                    
+                    
+                    <Link to='/mainprofile' class="fancy" href="#">
+                        <span class="top-key"></span>
+                        <span class="text">profile</span>
+                        <span class="bottom-key-1"></span>
+                        <span class="bottom-key-2"></span>
+                    </Link>
                 </div>
             </div>
+
+            {/* <button type="button" onClick={handdleConnect}>{active ? 'disconnect':'connect'}</button> */}
         </header>
     );
 }

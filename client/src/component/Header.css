@@ -4,6 +4,7 @@
     background-color: white;
     width:100%;
     height:100px;
+    z-index: 3;
 }
 
 .contents{
@@ -14,167 +15,157 @@
 
 .logo_area{
     display: flex;
+    width: 20%;
+    justify-content: center;
+    align-items: center;
 }
 
 .search_area{
     display: flex;
+    width: 60%;
+    justify-content: center;
+    align-items: center;
 }
 
-.form {
-    --input-bg: #FFf;
-   /*  background of input */
-    --padding: 1.5em;
-    --rotate: 80deg;
-   /*  rotation degree of input*/
-    --gap: 2em;
-    /*  gap of items in input */
-    --icon-change-color: #15A986;
-   /*  when rotating changed icon color */
-    --height: 40px;
-   /*  height */
-    width: 200px;
-    -webkit-padding-end: 1em;
-            padding-inline-end: 1em;
-   /*  change this for padding in the end of input */
-    background: var(--input-bg);
-    position: relative;
-    border-radius: 4px;
+.input-container {
+  width: 80%;
+  position: relative;
+}
+
+.icon {
+  position: absolute;
+  right: 10px;
+  top: calc(50% + 5px);
+  transform: translateY(calc(-50% - 5px));
+}
+
+.input {
+  width: 96%;
+  height: 50%;
+  padding: 10px;
+  transition: .2s linear;
+  border: 2.5px solid black;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.input:focus {
+  outline: none;
+  border: 0.5px solid black;
+  box-shadow: -5px -5px 0px black;
+}
+
+.input-container:hover > .icon {
+  animation: anim 1s linear infinite;
+}
+
+@keyframes anim {
+  0%,
+  100% {
+    transform: translateY(calc(-50% - 5px)) scale(1);
   }
-  
-  .form label {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    width: 100%;
-    height: var(--height);
+
+  50% {
+    transform: translateY(calc(-50% - 5px)) scale(1.1);
   }
-  
-  .form input {
-    width: 100%;
-    -webkit-padding-start: calc(var(--padding) + var(--gap));
-            padding-inline-start: calc(var(--padding) + var(--gap));
-    outline: none;
-    background: none;
-    border: 0;
-  }
-  /* style for both icons -- search,close */
-  .form svg {
-    /* display: block; */
-    color: #111;
-    -webkit-transition: 0.3s cubic-bezier(.4,0,.2,1);
-    transition: 0.3s cubic-bezier(.4,0,.2,1);
-    position: absolute;
-    height: 15px;
-  }
-  /* search icon */
-  .icon {
-    position: absolute;
-    left: var(--padding);
-    -webkit-transition: 0.3s cubic-bezier(.4,0,.2,1);
-    transition: 0.3s cubic-bezier(.4,0,.2,1);
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-  }
-  /* arrow-icon*/
-  .swap-off {
-    -webkit-transform: rotate(-80deg);
-        -ms-transform: rotate(-80deg);
-            transform: rotate(-80deg);
-    opacity: 0;
-    visibility: hidden;
-  }
-  /* close button */
-  .close-btn {
-    /* removing default bg of button */
-    background: none;
-    border: none;
-    right: calc(var(--padding) - var(--gap));
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    color: #111;
-    padding: 0.1em;
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    -webkit-transition: 0.3s;
-    transition: 0.3s;
-    opacity: 0;
-    -webkit-transform: scale(0);
-        -ms-transform: scale(0);
-            transform: scale(0);
-    visibility: hidden;
-  }
-  
-  .form input:focus ~ .icon {
-    -webkit-transform: rotate(var(--rotate)) scale(1.3);
-        -ms-transform: rotate(var(--rotate)) scale(1.3);
-            transform: rotate(var(--rotate)) scale(1.3);
-  }
-  
-  .form input:focus ~ .icon .swap-off {
-    opacity: 1;
-    -webkit-transform: rotate(-80deg);
-        -ms-transform: rotate(-80deg);
-            transform: rotate(-80deg);
-    visibility: visible;
-    color: var(--icon-change-color);
-  }
-  
-  .form input:focus ~ .icon .swap-on {
-    opacity: 0;
-    visibility: visible;
-  }
-  
-  .form input:valid ~ .icon {
-    -webkit-transform: scale(1.3) rotate(var(--rotate));
-        -ms-transform: scale(1.3) rotate(var(--rotate));
-            transform: scale(1.3) rotate(var(--rotate))
-  }
-  
-  .form input:valid ~ .icon .swap-off {
-    opacity: 1;
-    visibility: visible;
-    color: var(--icon-change-color);
-  }
-  
-  .form input:valid ~ .icon .swap-on {
-    opacity: 0;
-    visibility: visible;
-  }
-  
-  .form input:valid ~ .close-btn {
-    opacity: 1;
-    visibility: visible;
-    -webkit-transform: scale(1);
-        -ms-transform: scale(1);
-            transform: scale(1);
-    -webkit-transition: 0s;
-    transition: 0s;
-  }
-  
+}
 
 .menu_area{
     display: flex;
+    width: 20%;
+    justify-content: center;
+    align-items: center;
 }
+
+.fancy {
+  background-color: transparent;
+  height: 60%;
+  width: 60%;
+  border: 2px solid #000;
+  border-radius: 0;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  margin: 5%;
+  outline: none;
+  overflow: visible;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  text-transform: none;
+  transition: all 0.3s ease-in-out;
+  user-select: none;
+  font-size: 13px;
+ }
+ 
+ .fancy .text {
+  font-size: 1.125em;
+  line-height: 1.33333em;
+  transition: all 0.3s ease-in-out;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: black;
+ }
+ 
+ .fancy .top-key {
+  height: 2px;
+  width: 1.5625rem;
+  top: -2px;
+  left: 0.625rem;
+  position: absolute;
+  background: #e8e8e8;
+  transition: width 0.5s ease-out, left 0.3s ease-out;
+ }
+ 
+ .fancy .bottom-key-1 {
+  height: 2px;
+  width: 1.5625rem;
+  right: 1.875rem;
+  bottom: -2px;
+  position: absolute;
+  background: #e8e8e8;
+  transition: width 0.5s ease-out, right 0.3s ease-out;
+ }
+ 
+ .fancy .bottom-key-2 {
+  height: 2px;
+  width: 0.625rem;
+  right: 0.625rem;
+  bottom: -2px;
+  position: absolute;
+  background: #e8e8e8;
+  transition: width 0.5s ease-out, right 0.3s ease-out;
+ }
+ 
+ .fancy:hover {
+  color: white;
+  background: black;
+ }
+ 
+ .fancy:hover::before {
+  width: 0.9375rem;
+  background: white;
+ }
+ 
+ .fancy:hover .text {
+  color: white;
+  padding-left: 1.5em;
+ }
+ 
+ .fancy:hover .top-key {
+  left: -2px;
+  width: 0px;
+ }
+ 
+ .fancy:hover .bottom-key-1,
+  .fancy:hover .bottom-key-2 {
+  right: 0;
+  width: 0;
+ }
 
 .logo{
     height: 80px;
