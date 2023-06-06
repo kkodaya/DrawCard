@@ -22,6 +22,8 @@ const Main = () => {
                 </Link>
             </div>
 
+
+            <div className='subtitle'>최근 등록된 디자인</div>
             {/* 최신 업로드 프로필 영역 */}
             <div className='new_profile'>
                 <Link to="/cardDetail" className='new_content'>
@@ -31,6 +33,7 @@ const Main = () => {
                 <div className='new_content'></div>
             </div>
 
+            <div className='subtitle'>작가 디자인</div>
             {/* 작가 이름 및 업로드 프로필 영역 */}
             <div className='author_profile1'>
                 <div className='author_content1'></div>
@@ -38,6 +41,7 @@ const Main = () => {
                 <div className='author_content1'></div>
             </div>
 
+            <div className='subtitle'>작가 디자인</div>
             {/* 작가 이름 및 업로드 프로필 영역 */}
             <div className='author_profile2'>
                 <div className='author_content2'></div>

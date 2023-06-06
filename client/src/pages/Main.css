@@ -17,6 +17,12 @@
     color: wheat;
 }
 
+.subtitle{
+    padding-left: 15%;
+    padding-top: 1%;
+    font-size: 30px;
+}
+
 .main_profile {
     height: 30%;
     display: flex;
