@@ -9,11 +9,12 @@ function CardBuy() {
 
     const [isModalOpen , setIsModalOpen] = useState(false);
 
-    const openModal =() => {
+    const openModal = () => {
+      
       setIsModalOpen(true);
     };
   
-    const closeModal =() =>{
+    const closeModal = () =>{
       setIsModalOpen(false);
     };
 
@@ -30,7 +31,7 @@ function CardBuy() {
 
                     <img className='left_img' src={Img} />
 
-                    <form className='right_text'>
+                    <ul className='right_text'>
                         <li>
                             <label>닉네임 :</label>
                             <input type="text" className='nick'></input>
@@ -43,7 +44,7 @@ function CardBuy() {
                            <label>소속 :</label>
                            <input type="text" className=' attach'></input> 
                         </li>                      
-                    </form>
+                    </ul>
                 </div>
                 {/* main_con end */}
                 
@@ -54,13 +55,15 @@ function CardBuy() {
               
               {isModalOpen && (
                 
-                <div className='modal'>
+                <div className="modal2">
+                  
                     <h3>입력한 내용은 바꿀수 없습니다</h3>
                     <div className='modal_buy_cancle'>
                           <button className='modal_buy'>구매</button>
                           <button className='modal_cancle' onClick={closeModal}>취소</button>
                     </div>
                 </div>
+                
                 
               )}
 

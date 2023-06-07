@@ -2,7 +2,7 @@
 a{text-decoration: none; color:inherit}
 li{list-style: none;}
 
-/* body{
+ /*body{
   background:#b8f1fa;
   height:1000px;
 }
@@ -39,18 +39,21 @@ li{list-style: none;}
 .main_con{
   display:flex;
   margin-left:10%;
-  align-items: center;
+ 
 }
 .main_con .left_img{
   width:50%;
   margin-right:5%;
 }
+.main_con .right_text{
+  width:100%;
+}
 .main_con .right_text li{
-  margin-bottom:30%;
+  margin-bottom:15%;
   font-size:24px;
   display:flex;
   align-items: center;
-  width:300px;
+  width:100%;
 }
 .main_con .right_text li input{
   padding:5px;
@@ -71,11 +74,11 @@ li{list-style: none;}
   margin-right:5%;
 }
 
-.modal{
+.modal2{
   width:50%;
   position:absolute;
   left:50%;
-  top:75%;
+  top:50%;
   transform:translate(-50%,-50%);    
   text-align: center;
   height:500px;
@@ -83,14 +86,14 @@ li{list-style: none;}
   border: 0.5px solid #000;
 }
 
-.modal h3{
-margin-top:25%;
+.modal2 h3{
+margin-top:15%;
 font-size:36px;
 }
 
 .modal_buy_cancle{
 width:100%;
-margin:50px auto 0;
+margin:150px auto 0;
 text-align: center;
 }
 .modal_buy_cancle button{
