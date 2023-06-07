@@ -21,11 +21,11 @@ const MainProfile = () => {
           <MenuButton name="구매 목록"/>
         </Link>
 
-        <Link to='/profilesell'>
+        <Link to='/items'>
         <MenuButton name="판매 목록"/>
         </Link>
 
-        <Link to ='/mainprofile'>
+        <Link to ='/profilesell'>
           <MenuButton name="판매 등록"/>
          </Link>
       </div>
