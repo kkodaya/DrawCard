@@ -27,7 +27,7 @@ function CardDetail() {
      
         
         <div className="main">
-            <div className='main_con'>
+            <div className='main_contents'>
                 <img className='left_img' src={Img} />
           
                     
@@ -35,7 +35,7 @@ function CardDetail() {
                       <li>{designCategori}</li>
                       <li>{designName} {designName}</li>
                       <li>{designerName}</li>
-                      <li>{designEx}  {designEx} {designEx}  {designEx} {designEx}  {designEx} {designEx}  {designEx}</li>
+                      <li>{designEx}  {designEx} {designEx}  {designEx} {designEx}  {designEx} {designEx}  {designEx} {designEx} {designEx} {designEx}  {designEx} {designEx}  {designEx} {designEx}  {designEx} {designEx}  {designEx} {designEx} {designEx} {designEx}  {designEx} {designEx}  {designEx} {designEx}  {designEx} {designEx}  {designEx} {designEx} {designEx} {designEx}  {designEx} {designEx}  {designEx} {designEx}  {designEx} {designEx}  {designEx} {designEx} {designEx}{designEx}  {designEx} {designEx}  {designEx} {designEx}  {designEx} {designEx}  {designEx} {designEx} {designEx}</li>
                       <li>
                         {designPrice}
                             <Link to="/cardbuy" className='button'>
