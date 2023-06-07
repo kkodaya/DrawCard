@@ -5,7 +5,7 @@ import { useState } from 'react';
 
 // 메인 페이지 작성자 이금철
 const Main = () => {
-    const [category, setCategory] = useState("");
+    const [category, setCategory] = useState("ALL");
 
     return (
         <div className="mainpage">
@@ -18,7 +18,7 @@ const Main = () => {
                     setCategory("BEST")
             }}> BEST <span></span></button>
                 <button className="catebtn" onClick={()=>{
-                    setCategory("NOMAL")
+                    setCategory("NORMAL")
             }}> NORMAL <span></span></button>
                 <button className="catebtn" onClick={()=>{
                     setCategory("ART")
@@ -56,6 +56,106 @@ const Main = () => {
             </div>
 
             <div className='subtitle'>작가 디자인</div>
+            {/* 작가 이름 및 업로드 프로필 영역 */}
+            <div className='author_profile2'>
+                <div className='author_content2'></div>
+                <div className='author_content2'></div>
+                <div className='author_content2'></div>
+            </div>
+            </>}
+
+            {category === "BEST" && <>
+            {/* 작가 프로필 홍보 영역 */}
+            <div className='new_profile'>
+                <Link to="/cardDetail" className='new_content'>
+                    <div><img src={Example} alt='profile'/></div>
+                </Link>
+                <div className='new_content'></div>
+                <div className='new_content'></div>
+            </div>
+
+            {/* 작가 이름 및 업로드 프로필 영역 */}
+            <div className='author_profile1'>
+                <div className='author_content1'></div>
+                <div className='author_content1'></div>
+                <div className='author_content1'></div>
+            </div>
+
+            {/* 작가 이름 및 업로드 프로필 영역 */}
+            <div className='author_profile2'>
+                <div className='author_content2'></div>
+                <div className='author_content2'></div>
+                <div className='author_content2'></div>
+            </div>
+            </>}
+
+            {category === "NORMAL" && <>
+            {/* 작가 프로필 홍보 영역 */}
+            <div className='new_profile'>
+                <Link to="/cardDetail" className='new_content'>
+                    <div><img src={Example} alt='profile'/></div>
+                </Link>
+                <div className='new_content'></div>
+                <div className='new_content'></div>
+            </div>
+
+            {/* 작가 이름 및 업로드 프로필 영역 */}
+            <div className='author_profile1'>
+                <div className='author_content1'></div>
+                <div className='author_content1'></div>
+                <div className='author_content1'></div>
+            </div>
+
+            {/* 작가 이름 및 업로드 프로필 영역 */}
+            <div className='author_profile2'>
+                <div className='author_content2'></div>
+                <div className='author_content2'></div>
+                <div className='author_content2'></div>
+            </div>
+            </>}
+
+            {category === "ART" && <>
+            {/* 작가 프로필 홍보 영역 */}
+            <div className='new_profile'>
+                <Link to="/cardDetail" className='new_content'>
+                    <div><img src={Example} alt='profile'/></div>
+                </Link>
+                <div className='new_content'></div>
+                <div className='new_content'></div>
+            </div>
+
+            {/* 작가 이름 및 업로드 프로필 영역 */}
+            <div className='author_profile1'>
+                <div className='author_content1'></div>
+                <div className='author_content1'></div>
+                <div className='author_content1'></div>
+            </div>
+
+            {/* 작가 이름 및 업로드 프로필 영역 */}
+            <div className='author_profile2'>
+                <div className='author_content2'></div>
+                <div className='author_content2'></div>
+                <div className='author_content2'></div>
+            </div>
+            </>}
+
+            {category === "EFFECT" && <>
+            {/* 작가 프로필 홍보 영역 */}
+            <div className='new_profile'>
+                <Link to="/cardDetail" className='new_content'>
+                    <div><img src={Example} alt='profile'/></div>
+                </Link>
+                <div className='new_content'></div>
+                <div className='new_content'></div>
+            </div>
+
+            {/* 작가 이름 및 업로드 프로필 영역 */}
+            <div className='author_profile1'>
+                <div className='author_content1'></div>
+                <div className='author_content1'></div>
+                <div className='author_content1'></div>
+            </div>
+
             {/* 작가 이름 및 업로드 프로필 영역 */}
             <div className='author_profile2'>
                 <div className='author_content2'></div>
