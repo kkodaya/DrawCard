@@ -1,19 +1,25 @@
 import React from 'react'
+import './ProfileSell.css'
 import Navbar from '../component/Navbar'
 import MenuButton from '../component/MenuButton'
 import { Container,Button } from 'react-bootstrap'
+import { Link } from 'react-router-dom';
 
 // 프로필 판매 페이지 작성자 이현일
 const ProfileSell = () => {
   return (
-    <div>
+    <div className='profilesell'>
       <Container>
-      <Navbar/>
+      {/* <Navbar/> */}
  
       <div className="menu-buttons">
-      <MenuButton name="구매 목록"/>
-      <MenuButton name="판매 목록"/>
-      <MenuButton name="판매 등록"/>
+        <Link to='/Mainprofile'>
+          <MenuButton name="구매 목록"/>
+        </Link>
+        <MenuButton name="판매 목록"/>
+        <Link to='/profilesell'>
+          <MenuButton name="판매 등록"/>
+        </Link>
       </div>
        
       <div>
