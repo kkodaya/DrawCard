@@ -1,6 +1,7 @@
 import React ,{ useState } from 'react';
 import Img from '../component/img/Logo.png';
 import './CardBuy.css';
+import { Link } from 'react-router-dom';
 
 // 프로필 구매 페이지 작성자 김용우
 function CardBuy() {
@@ -50,7 +51,7 @@ function CardBuy() {
                 
                 <div className="buy_cancle">
                   <button className='buy_btn' onClick={openModal}>구매</button>
-                  <button className='cancle_btn'>취소</button>
+                  <Link to="/CardDetail" className='cancle_btn'>취소</Link>
               </div>
               
               {isModalOpen && (

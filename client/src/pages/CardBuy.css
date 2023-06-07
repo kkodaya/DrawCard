@@ -70,6 +70,14 @@ li{list-style: none;}
   background:transparent;
   cursor:pointer;
 }
+.buy_cancle a{
+  padding:15px 45px;
+  background:transparent;
+  cursor:pointer;
+  color:#000;
+  border:2px solid #000;
+  text-decoration: none;
+}
 .buy_cancle button:nth-of-type(1){
   margin-right:5%;
 }
