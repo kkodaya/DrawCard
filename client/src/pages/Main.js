@@ -1,20 +1,34 @@
 import './Main.css'
 import Example from '../component/img/example.png'
 import { Link } from 'react-router-dom';
+import { useState } from 'react';
 
 // 메인 페이지 작성자 이금철
 const Main = () => {
+    const [category, setCategory] = useState("");
+
     return (
         <div className="mainpage">
             {/* 카테고리 영역 */}
             <div className='cate'>
-                <button className="catebtn"> ALL <span></span></button>
-                <button className="catebtn"> BEST <span></span></button>
-                <button className="catebtn"> NORMAL <span></span></button>
-                <button className="catebtn"> ART <span></span></button>
-                <button className="catebtn"> EFFECT <span></span></button>
+                <button className="catebtn" onClick={()=>{
+                    setCategory("ALL")
+            }}> ALL <span></span></button>
+                <button className="catebtn" onClick={()=>{
+                    setCategory("BEST")
+            }}> BEST <span></span></button>
+                <button className="catebtn" onClick={()=>{
+                    setCategory("NOMAL")
+            }}> NORMAL <span></span></button>
+                <button className="catebtn" onClick={()=>{
+                    setCategory("ART")
+            }}> ART <span></span></button>
+                <button className="catebtn" onClick={()=>{
+                    setCategory("EFFECT")
+            }}> EFFECT <span></span></button>
             </div>
-
+            
+            {category === "ALL" && <>
             {/* 작가 프로필 홍보 영역 */}
             <div className='main_profile'>
                 <Link to="/mainprofile" className='main_content'>
@@ -48,6 +62,7 @@ const Main = () => {
                 <div className='author_content2'></div>
                 <div className='author_content2'></div>
             </div>
+            </>}
         </div>
     );
 }
