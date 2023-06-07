@@ -8,11 +8,11 @@ const Main = () => {
         <div className="mainpage">
             {/* 카테고리 영역 */}
             <div className='cate'>
-                <button class="catebtn"> ALL <span></span></button>
-                <button class="catebtn"> BEST <span></span></button>
-                <button class="catebtn"> NORMAL <span></span></button>
-                <button class="catebtn"> ART <span></span></button>
-                <button class="catebtn"> EFFECT <span></span></button>
+                <button className="catebtn"> ALL <span></span></button>
+                <button className="catebtn"> BEST <span></span></button>
+                <button className="catebtn"> NORMAL <span></span></button>
+                <button className="catebtn"> ART <span></span></button>
+                <button className="catebtn"> EFFECT <span></span></button>
             </div>
 
             {/* 작가 프로필 홍보 영역 */}
