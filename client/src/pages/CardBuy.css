@@ -70,3 +70,34 @@ li{list-style: none;}
 .buy_cancle button:nth-of-type(1){
   margin-right:5%;
 }
+
+.modal{
+  width:50%;
+  position:absolute;
+  left:50%;
+  top:75%;
+  transform:translate(-50%,-50%);    
+  text-align: center;
+  height:500px;
+  background:#fff;
+  border: 0.5px solid #000;
+}
+
+.modal h3{
+margin-top:25%;
+font-size:36px;
+}
+
+.modal_buy_cancle{
+width:100%;
+margin:50px auto 0;
+text-align: center;
+}
+.modal_buy_cancle button{
+padding:15px 45px;
+background:transparent;
+cursor:pointer;
+}
+.modal_buy_cancle button:nth-of-type(1){
+margin-right:5%;
+} 

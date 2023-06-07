@@ -7,6 +7,16 @@ function CardBuy() {
 
     const [title , setTitle] = useState('goldblock');
 
+    const [isModalOpen , setIsModalOpen] = useState(false);
+
+    const openModal =() => {
+      setIsModalOpen(true);
+    };
+  
+    const closeModal =() =>{
+      setIsModalOpen(false);
+    };
+
     return(
         <div className="buy">
              {/* <header className='header'>
@@ -38,11 +48,23 @@ function CardBuy() {
                 {/* main_con end */}
                 
                 <div className="buy_cancle">
-                    <button className='buy_btn'>구매</button>
-                    <button className='cancle_btn'>취소</button>
+                  <button className='buy_btn' onClick={openModal}>구매</button>
+                  <button className='cancle_btn'>취소</button>
+              </div>
+              
+              {isModalOpen && (
+                
+                <div className='modal'>
+                    <h3>입력한 내용은 바꿀수 없습니다</h3>
+                    <div className='modal_buy_cancle'>
+                          <button className='modal_buy'>구매</button>
+                          <button className='modal_cancle' onClick={closeModal}>취소</button>
+                    </div>
                 </div>
                 
-            </div>
+              )}
+
+        </div>
 
         </div>
 
