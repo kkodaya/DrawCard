@@ -11,13 +11,20 @@ import Items from './pages/Items';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { Web3ReactProvider } from "@web3-react/core";
+import { Web3Provider } from "@ethersproject/providers";
 
+function getLibrary(provider) {
+  const library = new Web3Provider(provider, "any");
+  return library;
+}
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-      <Header/>
+      <Web3ReactProvider getLibrary={getLibrary}>
+        <Header/>
         <Routes>
           {/* 메인 페이지 이동 기본 값 */}
           <Route path="/" element={<Main/>}/>
@@ -31,8 +38,8 @@ root.render(
           <Route path="/cardbuy" element={<CardBuy/>}/>
           {/* 명함 판매 목록 페이지 이동 */}
           <Route path ="/items" element= {<Items/>}/>
-
         </Routes>
+      </Web3ReactProvider>
     </BrowserRouter>
   </React.StrictMode>
 );

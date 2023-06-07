@@ -1,10 +1,32 @@
 import './Header.css';
 import { Link } from 'react-router-dom';
 import Logo from './img/Logo.png';
-
+import { useWeb3React } from "@web3-react/core";
+import { injected } from "./connecter";
+import { isNoEthereumObject } from "./error";
 
 // 헤더 페이지 작성자 이금철
 const Header = () => {
+    const {
+        chainedId,
+        account,
+        active,
+        activate,
+        deactivate
+      } = useWeb3React();
+    
+      const handdleConnect = () => {
+        if(active) {
+          deactivate();
+          return;
+        }
+        
+        activate(injected, (error) => {
+          if(isNoEthereumObject(error)) {
+            window.open('https://metamask.io/download.html');
+          }
+        });
+      }
     
     return (
         <header className='header'>
@@ -30,14 +52,12 @@ const Header = () => {
 
                 {/* 메뉴 영역 */}
                 <div className='menu_area'>
-                    <a className="fancy" href="#">
+                    <a className="fancy" href="#" onClick={handdleConnect}>
                         <span className="top-key"></span>
-                        <span className="text">wallet</span>
+                        <span className="text">{active ? 'disconnet':'wallet connet'}</span>
                         <span className="bottom-key-1"></span>
                         <span className="bottom-key-2"></span>
                     </a>
-
-                    
                     
                     <Link to='/mainprofile' className="fancy" href="#">
                         <span className="top-key"></span>
