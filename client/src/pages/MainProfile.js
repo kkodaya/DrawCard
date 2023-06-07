@@ -12,8 +12,6 @@ const MainProfile = () => {
     <div className="profile">
 
       <Container>
-
-      {/* <Navbar/> */}
       <ProductCard/>
       <h2>프로필 이름</h2>
       <hr></hr>
@@ -22,10 +20,14 @@ const MainProfile = () => {
         <Link to='/Mainprofile'>
           <MenuButton name="구매 목록"/>
         </Link>
-        <MenuButton name="판매 목록"/>
+
         <Link to='/profilesell'>
-          <MenuButton name="판매 등록"/>
+        <MenuButton name="판매 목록"/>
         </Link>
+
+        <Link to ='/mainprofile'>
+          <MenuButton name="판매 등록"/>
+         </Link>
       </div>
 
       <Row>

@@ -7,9 +7,11 @@ import MainProfile from './pages/MainProfile';
 import ProfileSell from './pages/ProfileSell';
 import CardDetail from './pages/CardDetail';
 import CardBuy from './pages/CardBuy';
+import Items from './pages/Items';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -27,6 +29,9 @@ root.render(
           <Route path="/carddetail" element={<CardDetail/>}/>
           {/* 명함 구매 페이지 페이지 이동 */}
           <Route path="/cardbuy" element={<CardBuy/>}/>
+          {/* 명함 판매 목록 페이지 이동 */}
+          <Route path ="/items" element= {<Items/>}/>
+
         </Routes>
     </BrowserRouter>
   </React.StrictMode>
