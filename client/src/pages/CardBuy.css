@@ -21,9 +21,12 @@ li{list-style: none;}
 
 .main .h3{
   font-size:24px;
-  margin-left:5%;
+  margin-left:12%;
   position:relative;
   margin-bottom:5%;
+  font-size:30px;
+  font-weight:bold;
+  margin-top:1%;
 }
 .main .h3::after{
   content:"";
@@ -37,39 +40,101 @@ li{list-style: none;}
   bottom:-50%;
 }
 .main_con{
+  width:90%;
   display:flex;
+  margin:0 auto;
+  justify-content: space-between;
   margin-left:10%;
+
  
 }
 .main_con .left_img{
-  width:50%;
+  width:100%;
   margin-right:5%;
+  position:relative;
+  border:2px solid #000;
+  border-radius: 20px;
 }
+.main_con .left_img img{
+  width:100%;
+}
+.main_con .left_img span{
+  font-size:24px;
+  font-weight:bold;
+
+}
+.main_con .left_img span:nth-of-type(1){
+  position:absolute;
+  bottom:25%;
+  right:4%;
+}
+.main_con .left_img span:nth-of-type(2){
+  position:absolute;
+  bottom:15%;
+  right:4%;
+}
+
+.main_con .left_img span:nth-of-type(3){
+  position:absolute;
+  bottom:5%;
+  right:4%;
+}
+
+
 .main_con .right_text{
   width:100%;
+  padding-left:0;
+  padding-top:5%;
+  font-weight:bold;
 }
 .main_con .right_text li{
   margin-bottom:15%;
   font-size:24px;
   display:flex;
   align-items: center;
-  width:100%;
+  width:60%;
+  justify-content: space-between;
 }
 .main_con .right_text li input{
-  padding:5px;
+  padding:10px;
   margin-left:4%;
+  border-radius: 20px;
+  border:2px solid #000;
+  
 }
 
 .buy_cancle{
   width:100%;
   margin:50px auto 0;
   text-align: center;
+
 }
 .buy_cancle button{
   padding:15px 45px;
   background:transparent;
   cursor:pointer;
+  transition:0.5s;
+  border:5px solid #000;
+  border-radius: 20px;
+  font-weight:bold;
 }
+.buy_cancle a{
+  padding:15px 45px;
+  background:transparent;
+  cursor:pointer;
+  text-decoration: none;
+  color:#000;
+  border:5px solid #000;
+  border-radius: 20px;
+  transition:0.5s;
+  font-weight:bold;
+}
+.buy_cancle button:hover,.buy_cancle a:hover{
+  color:#fff;
+  background:#000;
+  border:5px solid #d6d6d6;
+}
+
 .buy_cancle button:nth-of-type(1){
   margin-right:5%;
 }
@@ -83,7 +148,8 @@ li{list-style: none;}
   text-align: center;
   height:500px;
   background:#fff;
-  border: 0.5px solid #000;
+  border: 5px solid #000;
+  border-radius: 20px;
 }
 
 .modal2 h3{
@@ -100,6 +166,15 @@ text-align: center;
 padding:15px 45px;
 background:transparent;
 cursor:pointer;
+transition:0.5s;
+border:5px solid #000;
+border-radius: 20px;
+font-weight:bold;
+}
+.modal_buy_cancle button:hover{
+  color:#fff;
+  background:#000;
+  border:5px solid #d6d6d6;
 }
 .modal_buy_cancle button:nth-of-type(1){
 margin-right:5%;
