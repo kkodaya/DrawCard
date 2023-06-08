@@ -4,15 +4,21 @@ import Logo from './img/Logo.png';
 import { useWeb3React } from "@web3-react/core";
 import { injected } from "./connecter";
 import { isNoEthereumObject } from "./error";
+import { useEffect, useState } from 'react';
+import { ethers } from 'ethers';
 
 // 헤더 페이지 작성자 이금철
 const Header = () => {
+    const [balance, setBalance] = useState('');
+    const [etherBalance, setEtherBalance] = useState("");
+
     const {
         chainedId,
         account,
         active,
         activate,
-        deactivate
+        deactivate,
+        library
       } = useWeb3React();
     
       const handdleConnect = () => {
@@ -27,6 +33,19 @@ const Header = () => {
           }
         });
       }
+      
+      useEffect(() => {
+		if (account) {
+			library
+				?.getBalance(account)
+				.then((result: IResult) => setBalance(result._hex));
+		}
+	}, [account, library]);
+
+    useEffect(() => {
+        console.log(ethers)
+        setEtherBalance(ethers.formatEther(Number(balance)))
+    }, [balance])
     
     return (
         <header className='header'>
@@ -52,19 +71,35 @@ const Header = () => {
 
                 {/* 메뉴 영역 */}
                 <div className='menu_area'>
+                    {/* 지갑 연결 및 연결 해제 */}
                     <a className="fancy" href="#" onClick={handdleConnect}>
                         <span className="top-key"></span>
-                        <span className="text">{active ? 'disconnet':'wallet connet'}</span>
+                        <span className="text">{active ? 'disconnet\n' + etherBalance + 'EH' :'wallet connet'}</span>
                         <span className="bottom-key-1"></span>
                         <span className="bottom-key-2"></span>
                     </a>
                     
-                    <Link to='/mainprofile' className="fancy" href="#">
-                        <span className="top-key"></span>
-                        <span className="text">profile</span>
-                        <span className="bottom-key-1"></span>
-                        <span className="bottom-key-2"></span>
-                    </Link>
+                    {/* 지갑이 연결된 상태에서 프로필 페이지로 이동 */}
+                    {active ? 
+                    <>
+                        <Link to='/mainprofile' className="fancy" href="#" >
+                            <span className="top-key"></span>
+                            <span className="text">profile</span>
+                            <span className="bottom-key-1"></span>
+                            <span className="bottom-key-2"></span>
+                        </Link>
+                    </>:
+                    <>
+                        {/* 지갑이 연결되지 않은 상태에서 지갑 연결 */}
+                        <div onClick={handdleConnect} className="fancy" href="#" >
+                            <span className="top-key"></span>
+                            <span className="text">profile</span>
+                            <span className="bottom-key-1"></span>
+                            <span className="bottom-key-2"></span>
+                        </div>
+                    </>
+                    }
+
                 </div>
             </div>
 
