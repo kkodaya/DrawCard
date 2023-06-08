@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
+
 // 메인 페이지 작성자 이금철
 const Main = () => {
     const [category, setCategory] = useState("ALL");
