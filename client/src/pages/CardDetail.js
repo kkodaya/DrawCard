@@ -17,7 +17,11 @@ function CardDetail() {
   const [designPrice , setDesignPrice] = useState ('0.3 ETH')
   const [designPriceWon , setDesignPriceWon] = useState ("$549.49")
 
- 
+  const [isRotated, setIsRotated] = useState(false);
+
+  const handleClick = () => {
+    setIsRotated(!isRotated);
+  };
 
   return (
    
@@ -30,8 +34,8 @@ function CardDetail() {
         
         <div className="main">
             <div className='main_contents'>
-                <div className='left_img'>
-                    <img src={Img} />
+                <div className='left_img' onClick={handleClick}>
+                    <img src={isRotated && '../component/img/Logo.png' || '../component/img/Logo.png'}  className={isRotated && 'rotated'}/>
                 </div>
           
                     

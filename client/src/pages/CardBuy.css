@@ -52,6 +52,8 @@ li{list-style: none;}
   width:100%;
   margin-right:5%;
   position:relative;
+  border:2px solid #000;
+  border-radius: 20px;
 }
 .main_con .left_img img{
   width:100%;
