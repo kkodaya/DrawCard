@@ -50,6 +50,7 @@ function CardDetail() {
                                 구매하기
                             </Link>
                       </li>
+                      
                 </ul>
             </div> 
         </div>
