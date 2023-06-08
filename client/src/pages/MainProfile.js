@@ -20,7 +20,7 @@ const MainProfile = () => {
         <Link to='/Mainprofile'>
           <MenuButton name="구매 목록"/>
         </Link>
-
+    
         <Link to='/items'>
         <MenuButton name="판매 목록"/>
         </Link>
