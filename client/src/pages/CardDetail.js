@@ -30,12 +30,14 @@ function CardDetail() {
         
         <div className="main">
             <div className='main_contents'>
-                <img className='left_img' src={Img} />
+                <div className='left_img'>
+                    <img src={Img} />
+                </div>
           
                     
                 <ul className='right_text'>
                       <li>{designCategori}</li>
-                      <li>{designName} {designName}</li>
+                      <li>{designName}</li>
                       <li>{designerName}</li>
                       <li>{designEx}</li>
                       <li>

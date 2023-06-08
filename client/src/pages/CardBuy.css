@@ -21,7 +21,7 @@ li{list-style: none;}
 
 .main .h3{
   font-size:24px;
-  margin-left:7%;
+  margin-left:12%;
   position:relative;
   margin-bottom:5%;
   font-size:30px;
@@ -45,6 +45,7 @@ li{list-style: none;}
   margin:0 auto;
   justify-content: space-between;
   margin-left:10%;
+
  
 }
 .main_con .left_img{
@@ -81,6 +82,8 @@ li{list-style: none;}
 .main_con .right_text{
   width:100%;
   padding-left:0;
+  padding-top:5%;
+  font-weight:bold;
 }
 .main_con .right_text li{
   margin-bottom:15%;
@@ -91,14 +94,18 @@ li{list-style: none;}
   justify-content: space-between;
 }
 .main_con .right_text li input{
-  padding:5px;
+  padding:10px;
   margin-left:4%;
+  border-radius: 20px;
+  border:2px solid #000;
+  
 }
 
 .buy_cancle{
   width:100%;
   margin:50px auto 0;
   text-align: center;
+
 }
 .buy_cancle button{
   padding:15px 45px;
@@ -107,6 +114,7 @@ li{list-style: none;}
   transition:0.5s;
   border:5px solid #000;
   border-radius: 20px;
+  font-weight:bold;
 }
 .buy_cancle a{
   padding:15px 45px;
@@ -117,12 +125,12 @@ li{list-style: none;}
   border:5px solid #000;
   border-radius: 20px;
   transition:0.5s;
+  font-weight:bold;
 }
 .buy_cancle button:hover,.buy_cancle a:hover{
   color:#fff;
-  border:2px solid #fff;
   background:#000;
-  border:5px solid #000;
+  border:5px solid #d6d6d6;
 }
 
 .buy_cancle button:nth-of-type(1){
@@ -138,7 +146,8 @@ li{list-style: none;}
   text-align: center;
   height:500px;
   background:#fff;
-  border: 0.5px solid #000;
+  border: 5px solid #000;
+  border-radius: 20px;
 }
 
 .modal2 h3{
@@ -158,12 +167,12 @@ cursor:pointer;
 transition:0.5s;
 border:5px solid #000;
 border-radius: 20px;
+font-weight:bold;
 }
 .modal_buy_cancle button:hover{
   color:#fff;
-  border:2px solid #fff;
   background:#000;
-  border:5px solid #000;
+  border:5px solid #d6d6d6;
 }
 .modal_buy_cancle button:nth-of-type(1){
 margin-right:5%;
