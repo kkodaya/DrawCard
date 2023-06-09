@@ -1,6 +1,7 @@
 import React ,{ useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Img from '../component/img/Logo.png';
+import Img2 from'../component/img/example.png';
 import './CardDetail.css';
 import { Link } from "react-router-dom";
 
@@ -32,6 +33,7 @@ function CardDetail() {
   const handleClick = () => {
     setIsRotated(!isRotated);
   };
+  
 
   return (
    
@@ -45,7 +47,8 @@ function CardDetail() {
         <div className="main">
             <div className='main_contents'>
                 <div className='left_img' onClick={handleClick}>
-                    <img src={isRotated && '../component/img/Logo.png' || '../component/img/DrawCard.png'}  className={isRotated && 'rotated'}/>
+                    <img src={isRotated ? '../component/img/Logo.png' :  '../component/img/DrawCard.png'}  className={isRotated && 'rotated'}/>
+                    
                 </div>
           
                     
