@@ -1,5 +1,5 @@
 import React ,{ useState } from 'react';
-import Img from '../component/img/Logo.png';
+import Img from '../component/img/artDC1.png';
 import Img2 from'../component/img/example.png';
 import './CardBuy.css';
 import { Link } from 'react-router-dom';
@@ -74,7 +74,7 @@ function CardBuy() {
                 
                 <div className='main_con'>
 
-                    <div id="imageWrapper" className={isRotated2 && 'rotated2'} onClick={handleClick2} >
+                    <div id="imageWrapper" className={isRotated2 && 'rotated2'} onClick={handleClick2} border-radius="20px" >
 
                             {isRotated2 ? (
                             <img src={Img2}alt="First Image" />

@@ -5,7 +5,7 @@ const MenuButton = (props) => {
   return (
     // 메뉴 버튼 작성자 이현일
     <div>
-      <Button variant="warning">{props.name}</Button>{' '}
+     <Button variant="warning">{props.name}</Button>{' '}
     </div>
   )
 }
