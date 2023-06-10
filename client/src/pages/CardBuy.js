@@ -40,6 +40,7 @@ function CardBuy() {
         setAttach(e.target.value);
     }
     const [isRotated2, setIsRotated2] = useState(false);
+
     // 명함 뒤집기
     const handleClick2 = () => {
         setIsRotated2(!isRotated2);
@@ -53,7 +54,8 @@ function CardBuy() {
           });
         }
       };
-      
+
+      // 캔버스로 이미지 저장
       const onSaveAs = (uri: string, filename: string) => {
         const link = document.createElement('a');
         link.href = uri;
@@ -77,14 +79,20 @@ function CardBuy() {
                     <div id="imageWrapper" className={isRotated2 && 'rotated2'} onClick={handleClick2} border-radius="20px" >
 
                             {isRotated2 ? (
-                            <img src={Img2}alt="First Image" />
+                            <div>
+                                <img src={Img2}alt="First Image" />
+                            </div>
                           ) : (
-                            <img src={Img} alt="Second Image" />
-                          )}
-                      <span>{userName}</span>
-                      <span>{userPosition}</span>
-                      <span>{userAttach}</span>
+                            <div>
+                                <img src={Img} alt="Second Image" />
+                                <span>{userName}</span>
+                                <span>{userPosition}</span>
+                                <span>{userAttach}</span>
                     
+                            </div>
+                          
+                          )}
+               
                     </div>
 
                     <ul className='right_text'>
