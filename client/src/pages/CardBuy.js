@@ -1,13 +1,16 @@
 import React ,{ useState } from 'react';
 import Img from '../component/img/Logo.png';
+import Img2 from'../component/img/example.png';
 import './CardBuy.css';
 import { Link } from 'react-router-dom';
+import html2canvas from 'html2canvas';
 
 // 프로필 구매 페이지 작성자 김용우
 function CardBuy() {
 
     const [title , setTitle] = useState('goldblock');
 
+    // 모달 오픈
     const [isModalOpen , setIsModalOpen] = useState(false);
 
     const openModal = () => {
@@ -18,11 +21,12 @@ function CardBuy() {
     const closeModal = () =>{
       setIsModalOpen(false);
     };
-
+    // 각인 초기값
     const [userName , setUserName] = useState("");
     const [userPosition , setPosition] = useState("");
     const [userAttach , setAttach] = useState("");
 
+    // 이미지위에 position으로 텍스트올리기 (각인)
     const handler = e =>
     {
         setUserName(e.target.value);
@@ -35,6 +39,30 @@ function CardBuy() {
     {
         setAttach(e.target.value);
     }
+    const [isRotated2, setIsRotated2] = useState(false);
+    // 명함 뒤집기
+    const handleClick2 = () => {
+        setIsRotated2(!isRotated2);
+      };
+      
+      const onCapture = () => {
+        const element = document.getElementById('imageWrapper');
+        if (element) {
+          html2canvas(element).then((canvas) => {
+            onSaveAs(canvas.toDataURL('image/png'), 'result.png');
+          });
+        }
+      };
+      
+      const onSaveAs = (uri: string, filename: string) => {
+        const link = document.createElement('a');
+        link.href = uri;
+        link.download = filename;
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      };
+      
     return(
         <div className="buy">
              {/* <header className='header'>
@@ -46,11 +74,17 @@ function CardBuy() {
                 
                 <div className='main_con'>
 
-                    <div className='left_img'>
-                      <img src={Img} />
+                    <div id="imageWrapper" className={isRotated2 && 'rotated2'} onClick={handleClick2} >
+
+                            {isRotated2 ? (
+                            <img src={Img2}alt="First Image" />
+                          ) : (
+                            <img src={Img} alt="Second Image" />
+                          )}
                       <span>{userName}</span>
                       <span>{userPosition}</span>
                       <span>{userAttach}</span>
+                    
                     </div>
 
                     <ul className='right_text'>
@@ -81,7 +115,7 @@ function CardBuy() {
                   
                     <h3>입력한 내용은 바꿀수 없습니다 구매하시겠습니까?</h3>
                     <div className='modal_buy_cancle'>
-                          <button className='modal_buy'>구매</button>
+                          <button className='modal_buy' onClick={onCapture}>구매</button>
                           <button className='modal_cancle' onClick={closeModal}>취소</button>
                     </div>
                 </div>

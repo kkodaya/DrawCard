@@ -1,14 +1,29 @@
 import './Main.css'
 import Example from '../component/img/example.png'
-import { Link } from 'react-router-dom';
-import { useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
+import { useEffect, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 
-// 메인 페이지 작성자 이금철
-const Main = () => {
-    const [category, setCategory] = useState("ALL");
 
+// 메인 페이지 작성자 이금철
+const Main = ({}) => {
+
+    const [category, setCategory] = useState("ALL");
+    const location = useLocation();
+
+    useEffect(()=>{
+        console.log(location.state)
+        if (location.state == null) {
+
+        } else {
+        setCategory(location.state.cate_gory)
+
+        }
+
+    },[location])
+
+     
     return (
         <div className="mainpage">
             {/* 카테고리 영역 */}

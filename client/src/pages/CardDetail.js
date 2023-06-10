@@ -1,9 +1,10 @@
-import React ,{ useState } from 'react';
+import React ,{ useState , useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Img from '../component/img/Logo.png';
 import Img2 from'../component/img/example.png';
 import './CardDetail.css';
 import { Link } from "react-router-dom";
+
 
 
 // 프로필 상세 페이지 작성자 김용우
@@ -19,23 +20,27 @@ function CardDetail() {
   const [designEx, setDesignEx] = useState('By ARSNL_Anna_Lucia_Gees...Generations is a collaboration between generative artist Anna Lucia and the quilters of Gees Bend. Anna Lucia developed an algorithm to craft a series of digital quilts inspired by the iconic patchworks of the Quilters of Gees Bend.')
   const [designPrice , setDesignPrice] = useState ('0.3 ETH')
   const [designPriceWon , setDesignPriceWon] = useState ("$549.49")
+  
+  
 
-  const [isRotated, setIsRotated] = useState(false);
 
   // 메인페이지 BEST 카테고리로 이동
-  const navigate = useNavigate();
-  const handleClick2 = () => {
-    navigate.push('/'); // 이동할 페이지의 경로 설정
+  // const navigate = useNavigate();
+  
+  // const handleClick2 = () => {
+  //   navigate('/'); // 이동할 페이지의 경로 설정
+    
+  // };
 
-  };
-
-  // 이미지 뒤집기
+  //명함  뒤집기
   const handleClick = () => {
     setIsRotated(!isRotated);
   };
+  const [isRotated, setIsRotated] = useState(false);
   
 
   return (
+   
    
     <div className="CardDetail">
         {/* <header className='header'>
@@ -46,14 +51,18 @@ function CardDetail() {
         
         <div className="main">
             <div className='main_contents'>
-                <div className='left_img' onClick={handleClick}>
-                    <img src={isRotated ? '../component/img/Logo.png' :  '../component/img/DrawCard.png'}  className={isRotated && 'rotated'}/>
-                    
+                <div className={isRotated && 'rotated'} onClick={handleClick}>
+                {isRotated ? (
+                  <img src={Img2}alt="First Image" />
+                ) : (
+                  <img src={Img} alt="Second Image" />
+                )}
+                    {/* {isRotated ? '../component/img/Logo.png' :  '../component/img/DrawCard.png'} */}
                 </div>
           
                     
                 <ul className='right_text'>
-                      <li><Link to="/" onClick={handleClick2} className="categoriLink">{designCategori}</Link></li>
+                      <li><Link to="/" state={{cate_gory:"BEST"}} className="categoriLink">{designCategori}</Link></li>
                       <li>{designName}</li>
                       <li><Link to="/mainprofile" className='profileMove'>{designerName}</Link></li>
                       <li>{designEx}</li>

@@ -31,24 +31,25 @@ li{list-style: none;}
   width:100%;
   margin:0 auto;
 }
-.main_contents .left_img{
+.main_contents>div{
   width:100%;
   margin-right:5%;
   border:2px solid #000;
   border-radius: 20px;
   perspective: 1000px;
   cursor:pointer;
-}
-
-.main_contents .left_img img {
-  width: 100%;
-  height: 100%;
-  border-radius:20px;
-  object-fit: cover; 
   transition: transform 0.5s ease; 
 }
 
-.main_contents .left_img img.rotated {
+.main_contents>div img {
+  width: 100%;
+  height: 100%;
+  border-radius:20px;
+  /* object-fit: cover;  */
+ 
+}
+
+.main_contents>div.rotated {
   transform: rotateY(180deg);
 }
 

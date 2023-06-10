@@ -31,7 +31,7 @@ const MainProfile = () => {
       </div>
 
       <Row>
-          <Col lg="4" ><ProductCard/></Col>
+          <Col lg="4" ><ProductCard /></Col>
           <Col lg="4" ><ProductCard/></Col>
           <Col lg="4" ><ProductCard/></Col>
           <Col lg="4" ><ProductCard/></Col>
